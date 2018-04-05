@@ -23,7 +23,7 @@ else:
 
 
 
-def google_it (domain,dork,filename):
+def dorkit (dork,filename):
 	out=open(filename,"a")
 	for title in search(dork, stop=50):
             	print(title)
@@ -39,7 +39,7 @@ with open("payloads", 'rb') as payloads:
 	for p in list(payloads.readlines()):
 		print '---Checking for -----'+ p
 		try:
-			google_it (domain, "domain:*."+domain+ " "+ p,domain)
+			dorkit ("site:*."+domain+ " "+ p,domain)
 		except:
 			pass
 		sleep(randint(1,3))
